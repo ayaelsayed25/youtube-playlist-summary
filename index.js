@@ -43,9 +43,9 @@ class PlaylistSummary {
   }
 
   // public
-  async getPlaylistItems(playlistId, playlistTitle) {
+  async getPlaylistItems(playlistId, playlistTitle, allResults) {
     try {
-      let { pageInfo, items } = await this.api.playlistItems(playlistId)
+      let { pageInfo, items } = await this.api.playlistItems(playlistId, allResults)
       let newPlaylistTitle = await this.getPlaylistTitle(playlistId, playlistTitle)
       const result = await this.format.playlistItems(playlistId, newPlaylistTitle, pageInfo, items)
       return result

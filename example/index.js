@@ -8,7 +8,7 @@ let config = {
 const ps = new PlaylistSummary(config)
 
 const CHANNEL_ID = 'UCQCaS3atWyNHEy5PkDXdpNg'
-const PLAY_LIST_ID = 'UUOMr4kllocYjytqDhVOwB3Q'
+const PLAY_LIST_ID = 'UUW5YeuERMmlnqo4oq8vwUpg'
 
 ps.getPlaylistItems(PLAY_LIST_ID)
   .then((result) => {
