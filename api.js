@@ -47,13 +47,18 @@ class API {
     let params = this.resetToDefault({ playlistId })
     const options = { url: `${API_URL_BASE}playlistItems`, method: 'get', params }
     let { data } = await axios(options)
-    let { nextPageToken } = data
-    while (nextPageToken) {
-      debug('nextPageToken:', nextPageToken)
-      let result = await this.playlistItemsNextPage(playlistId, nextPageToken)
-      data.items = data.items.concat(result.items)
-      nextPageToken = result.nextPageToken
-    }
+    // let { nextPageToken } = data
+    //  if(nextPageToken) {
+    //   debug('nextPageToken:', nextPageToken)
+    //   let result = await this.playlistItemsNextPage(playlistId, nextPageToken)
+    //   data.items = data.items.concat(result.items)
+    //   // if(i > 4)
+    //   // {
+    //   //   break;
+    //   // }
+    //   //nextPageToken = result.nextPageToken
+    // //   i++;
+    // }
     return data
   }
 
