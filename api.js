@@ -53,7 +53,7 @@ class API {
       debug('nextPageToken:', nextPageToken)
       let result = await this.playlistItemsNextPage(playlistId, nextPageToken)
       data.items = data.items.concat(result.items)
-      if(i > 8)
+      if(i > 4)
       {
         break;
       }
